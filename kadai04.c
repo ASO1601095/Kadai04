@@ -4,6 +4,9 @@
 #define MAX 128
 /*                                               */
 /*文字の連続回数を調べて、連続回数のnum変数を返す*/
+/*パラメータ：const char* in_str[in]、           */
+/*            char str[in]、int pos[in]          */
+/*リターン：num[out]                             */
 /*                                               */
 static int serial_check(const char* in_str,char str,int pos){
 	int j=0;
@@ -18,6 +21,9 @@ static int serial_check(const char* in_str,char str,int pos){
 /*４文字連続以上の文字の場合                     */
 /*“＠「num」「str」”の3文字の圧縮文字列を作成し*/
 /*出力ファイルの終端に貼り付ける                 */
+/*パラメータ：char* out_str[in/out]、            */
+/*            const char str[in]、int num[in]    */
+/*リターン：なし                                 */
 /*                                               */
 static void comp_write(char* out_str,const char str, int num){
 	char comp_str[4]={0};
@@ -31,7 +37,9 @@ static void comp_write(char* out_str,const char str, int num){
 /*４文字連続未満の文字の場合                     */
 /*num回連続のstr文字列を作成し                   */
 /*出力ファイルの終端に貼り付ける                 */
-/*                                               */
+/*パラメータ：char* out_str[in/out]、            */
+/*            const char str[in]、int num[in]    */
+/*リターン：なし                                 */
 static void as_write(char* out_str,const char str, int num){
 	char cons_str[4]={0};
 	int j=0;
@@ -44,7 +52,8 @@ static void as_write(char* out_str,const char str, int num){
 }
 /*                                               */
 /*              メイン関数                       */
-/*                                               */
+/*パラメータ：なし                               */
+/*リターン  ：0：OK                              */
 int main(void){
 	
 	int i=0,number;
